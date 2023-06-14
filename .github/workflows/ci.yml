@@ -22,7 +22,7 @@ jobs:
       - name: Start Storybook
         run: |
           cd /home/runner/work/cypress-split-cucumber-example/cypress-split-cucumber-example
-          yarn init
+          yarn install
           yarn storybook
       # generate the list using a bash script
       - name: Create matrix ⊹
