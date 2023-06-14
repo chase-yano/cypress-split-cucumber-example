@@ -1,7 +1,14 @@
-Given('I navigate to google main page', () => {
-  cy.visit('https://www.google.com/')
+Given('I navigate to storybook button', () => {
+  cy.visit('http://localhost:6006/?path=/story/example-button--primary')
 })
 
-Then('Logo is visible', () => {
-  cy.get('[alt="Google"]').should('be.visible')
+Then('I can click the button', () => {
+  cy.contains('Button').click();
 })
+Cypress.on('uncaught:exception', (err) => {
+  if (err.message.includes('> Unauthorized') || err.message.includes('ResizeObserver loop limit exceeded')) {
+    console.error('Cypress caught "> Unauthorized exception", continuing tests', err);
+    return false; // test continues
+  }
+  return true; // test fails
+});
