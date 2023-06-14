@@ -50,9 +50,21 @@ jobs:
         run: |
           yarn add storybook
           yarn add vite
-          yarn storybook
+          yarn storybook &
 
 
+      # Wait for Storybook to be ready
+      - name: Wait for Storybook
+        run: |
+          while true; do
+            response=$(curl -sL -w "%{http_code}\\n" "http://localhost:6006" -o /dev/null)
+            if [ "$response" == "200" ]; then
+              echo "Storybook is up and running!"
+              break
+            fi
+            echo "Storybook is not yet available. Retrying in 5 seconds..."
+            sleep 5
+          done
       - name: Run split Cypress tests 🧪
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v5
