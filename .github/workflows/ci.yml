@@ -39,7 +39,7 @@ jobs:
         run: echo '${{ steps.prepare.outputs.matrix }}'
 
   test-split:
-    needs: prepare
+    needs: [prepare, open-storybook]
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
