@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Start Storybook
         run: |
-          cd cypress-split-cucumber-example/
+          cd /home/runner/work/cypress-split-cucumber-example/cypress-split-cucumber-example
           yarn storybook
       # generate the list using a bash script
       - name: Create matrix ⊹
