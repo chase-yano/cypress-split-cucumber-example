@@ -11,15 +11,7 @@ jobs:
       - name: Run Cypress tests 🧪
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v5
-  open-storybook:
-      runs-on: ubuntu-20.04ß
-      steps:
-      - name: Start Storybook
-        run: yarn storybook
 
-      # - name: Wait Storybook
-      #   run: npx wait-on http://localhost:6006
-  # example splitting all tests across GitHub machines
   prepare:
     runs-on: ubuntu-20.04
     # explicitly set the output of this job
@@ -27,6 +19,8 @@ jobs:
     outputs:
       matrix: ${{ steps.prepare.outputs.matrix }}
     steps:
+      - name: Start Storybook
+        run: yarn storybook
       # generate the list using a bash script
       - name: Create matrix ⊹
         id: prepare
