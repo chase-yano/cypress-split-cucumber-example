@@ -20,7 +20,9 @@ jobs:
       matrix: ${{ steps.prepare.outputs.matrix }}
     steps:
       - name: Start Storybook
-        run: yarn storybook
+        run: |
+          cd cypress-split-cucumber-example/cypress-split-cucumber-example
+          yarn storybook
       # generate the list using a bash script
       - name: Create matrix ⊹
         id: prepare
