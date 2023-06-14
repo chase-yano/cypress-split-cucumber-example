@@ -28,6 +28,7 @@
     "@storybook/blocks": "^7.0.20",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@storybook/vue3": "^7.0.20",
+    "@storybook/vue3-vite": "^7.0.20",
     "@storybook/vue3-webpack5": "^7.0.20",
     "@vue/compiler-sfc": "^3.3.4",
     "cypress": "^12.5.1",
