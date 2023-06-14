@@ -15,7 +15,7 @@ jobs:
       runs-on: ubuntu-20.04
       steps:
       - name: Start Storybook
-        run: yarn storybook
+        run: npm run storybook
 
       - name: Wait Storybook
         run: npx wait-on http://localhost:6006
