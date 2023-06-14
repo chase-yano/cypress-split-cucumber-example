@@ -49,6 +49,7 @@ jobs:
       - name: Start SB
         run: |
           yarn add storybook
+          yarn add vite
           yarn storybook
 
 
