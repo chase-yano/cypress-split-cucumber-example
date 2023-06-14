@@ -7,7 +7,9 @@
   "scripts": {
     "test": "cypress run",
     "badges": "npx -p dependency-version-badge update-badge cypress cypress-split",
-    "debug": "DEBUG=cypress-split SPLIT=6 SPLIT_INDEX=5 npx cypress run"
+    "debug": "DEBUG=cypress-split SPLIT=6 SPLIT_INDEX=5 npx cypress run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "cypress-cucumber-preprocessor": {
     "step_definitions": "cypress/e2e/step_definitions"
@@ -19,9 +21,25 @@
   "author": "Gleb Bahmutov",
   "license": "MIT",
   "devDependencies": {
+    "@babel/preset-env": "^7.22.5",
+    "@storybook/addon-essentials": "^7.0.20",
+    "@storybook/addon-interactions": "^7.0.20",
+    "@storybook/addon-links": "^7.0.20",
+    "@storybook/blocks": "^7.0.20",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@storybook/vue3": "^7.0.20",
+    "@storybook/vue3-webpack5": "^7.0.20",
+    "@vue/compiler-sfc": "^3.3.4",
     "cypress": "^12.5.1",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-split": "^1.2.0",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.20",
+    "vue-loader": "^17.2.2"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
   }
 }
